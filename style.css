@@ -1,46 +1,56 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 22px;
 }
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    flex-direction: column;
+    gap: 10px;
 }
-.head {
-    > label {
-        display: flex;
-        flex-direction: column;
-        > input {
-            padding: 5px;
-            border: 1px solid red;
-        }
-    }
-    display: flex;
-    align-items: center;
-    gap: 15px;
+
+input[type="text"], input[type="submit"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
-.board {
+
+button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#firstForm,
+#secondForm {
+    display: none;
+}
+
+#gameboard {
     display: grid;
-    height: 400px;
-    width: 400px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
     gap: 2px;
-    padding: 2px;
-    margin: 0 auto;
 } 
 .cell {
+    margin-bottom: 0;
     font-size: 2.5rem;
     border: 1px solid red;
     background: lightyellow;
     cursor: pointer;
 }
-.start {
-    margin: 15px;
-    width: 150px;
-    height: 40px
+
+#gameBody {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
 }

@@ -8,22 +8,32 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h2>Welcome, time to Tic-Tac-Toe!</h2>
-        <button class="start">[Re/S]tart</button>
-        <div class="head">
-            <label for="name1">Player One:
-                <input type="text" id="name1" autofocus>
-            </label>
-            <div>
-                <p class="turn"></p>
-                <div class="board"></div>
-                <p class="msg"></p>
-            </div>
-            <label for="name2">Player Two:
-                <input type="text" id="name2">
-            </label>
-        </div>
+    <h2>Let's Tic-Tac-Toe!</h2>
+    <div>
+        <button id="add-player-one" onclick="displayFirstForm()">Add Player One</button>
+        <button id="add-player-two" onclick="displaySecondForm()">Add Player Two</button>
+    </div>
+    <div id="btn">
+        <button id="start" onclick="displayController()">Start</button>
+    </div>
+    <div id="firstForm">
+        <form action="javascript:void(0)" onsubmit="addPlayerOne()">
+            <input type="text" id="player-one">
+            <input type="submit" value="Add">
+            <button onclick="closeInput()">X</button>
+        </form>
+    </div>
+    <div id="secondForm">
+        <form action="javascript:void(0)" onsubmit="addPlayerTwo()">
+            <input type="text" id="player-two">
+            <input type="submit" value="Add">
+            <button onclick="closeInput()">X</button>
+        </form>
+    </div>
+    <div id="gameBody">
+        <p id="player-turn"></p>
+        <div id="gameboard"></div>
+        <p id="result"></p>
     </div>
 </body>
 </html>
